@@ -1,0 +1,9 @@
+services:
+  tinyproxy:
+    image: dannydirect/tinyproxy:latest
+    env_file:
+      - .env
+    ports:
+      - "8888:8888"
+    restart: unless-stopped
+    command: ${ALLOWED_IPS}
